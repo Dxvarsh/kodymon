@@ -9,7 +9,7 @@ function prevStep(step) {
 let grp_member = 0;
 
 function checkGrp() {
-    if (grp_member < 0) {
+    if (grp_member < 2) {
         alert('add atleast 2 grp members..!');
     }
     else {
