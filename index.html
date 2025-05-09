@@ -1,0 +1,1934 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="KODYMON offers affordable website development services for college students. Get your project website, portfolio, or resume site with fast delivery and WhatsApp support."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="" />
+
+    <!-- Alpine.js - Load first -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"
+    ></script>
+
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>
+      KODYMON - Student Website Development Services | Project Websites for
+      Final Year Students
+    </title>
+    <link rel="shortcut icon" href="./src/assets/images/👀.svg" type="image/x-icon">
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="KODYMON offers affordable website development services for college students. Get your project website, portfolio, or resume site with fast delivery and WhatsApp support."
+    />
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+
+    <!-- Core CSS and Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Project-specific styles -->
+    <style>
+      /* Base styles */
+      :root {
+        --primary-color: #8a2be2;
+        --secondary-color: #00ffff;
+        --accent-color: ;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Rubik, Inter, system-ui, sans-serif;
+      }
+      body {
+        font-family: DM Sans, Inter, system-ui, sans-serif;
+      }
+
+      /* Interactive elements */
+      .interactive-element {
+        transition: all 0.3s ease;
+      }
+      .interactive-element:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    </style>
+
+    <!-- Dynamic Meta Tags -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="KODYMON" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="" />
+
+    <!-- Header Scripts -->
+    <script id="header-scripts">
+      // This script tag will be replaced with actual scripts.head content
+      if (window.scripts && window.scripts.head) {
+        document.getElementById("header-scripts").outerHTML =
+          window.scripts.head;
+      }
+    </script>
+
+    <!-- Project Configuration -->
+    <script>
+      window.projectConfig = {
+        name: "KODYMON",
+        type: "",
+        settings: {
+          colors: {
+            primary: "#8A2BE2",
+            secondary: "#00FFFF",
+            accent: "",
+          },
+          fonts: {
+            primary: "Rubik",
+            secondary: "DM Sans",
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+    <!-- Main content area -->
+    <main id="main-content" class="flex-1 relative h-full">
+      <div id="root">
+        <header id="header" class="bg-neutral-900 text-white">
+          <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+              <!-- Logo -->
+              <div class="text-2xl font-bold text-white">
+                <a href="#" class="flex items-center">
+                  <span class="text-purple-500">KODY</span
+                  ><span class="text-cyan-400">MON</span>
+                </a>
+              </div>
+
+              <!-- Desktop Navigation -->
+              <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                  <a
+                    href="#"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Home</a
+                  >
+                  <a
+                    href="#services"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Services</a
+                  >
+                  <a
+                    href="#why-kodymon"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Why Us</a
+                  >
+                  <a
+                    href="#portfolio"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Portfolio</a
+                  >
+                  <a
+                    href="#testimonials"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Testimonials</a
+                  >
+                  <a
+                    href="#pricing"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Pricing</a
+                  >
+                  <a
+                    href="#contact"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Contact</a
+                  >
+                </ul>
+              </nav>
+
+              <!-- Mobile Menu Button -->
+              <button
+                id="mobile-menu-button"
+                class="md:hidden text-white focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+              <nav>
+                <ul class="flex flex-col space-y-3">
+                  <a
+                    href="#"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Home</a
+                  >
+                  <a
+                    href="#services"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Services</a
+                  >
+                  <a
+                    href="#why-kodymon"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Why Us</a
+                  >
+                  <a
+                    href="#portfolio"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Portfolio</a
+                  >
+                  <a
+                    href="#testimonials"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Testimonials</a
+                  >
+                  <a
+                    href="#pricing"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Pricing</a
+                  >
+                  <a
+                    href="#contact"
+                    class="font-Rubik text-white hover:text-purple-400 transition-colors duration-300"
+                    >Contact</a
+                  >
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <script>
+          // Mobile menu toggle functionality
+          document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton =
+              document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuButton.addEventListener("click", function () {
+              mobileMenu.classList.toggle("hidden");
+            });
+          });
+        </script>
+      </div>
+
+      <div id="hero-sec">
+        <section
+          id="hero"
+          class="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-900 text-white"
+        >
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 z-0">
+            <div
+              class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+            ></div>
+            <div
+              class="absolute top-10 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+            ></div>
+            <div
+              class="absolute bottom-10 left-1/2 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+            ></div>
+            <div class="absolute inset-0 bg-neutral-900 bg-opacity-70"></div>
+          </div>
+
+          <!-- Content Container -->
+          <div class="container mx-auto px-4 z-10 text-center">
+            <div class="max-w-3xl mx-auto">
+              <!-- Animated Heading -->
+              <h1
+                id="hero-heading"
+                class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 opacity-0 transform translate-y-8"
+              >
+                🚀 Get Your Project Website Ready with
+                <span class="text-purple-500">KODY</span
+                ><span class="text-cyan-400">MON</span>!
+              </h1>
+
+              <!-- Animated Subtext -->
+              <p
+                id="hero-subtext"
+                class="text-xl md:text-2xl mb-10 opacity-0 transform translate-y-8"
+              >
+                Professional websites for final year students - impress your
+                professors and stand out from the crowd!
+              </p>
+
+              <!-- CTA Buttons -->
+              <div
+                id="hero-cta"
+                class="flex flex-col sm:flex-row justify-center gap-4 opacity-0 transform translate-y-8"
+              >
+                <a
+                  href="#contact"
+                  class="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  <span id="phone-emoji" class="mr-2">📞</span> Contact Me
+                </a>
+                <a
+                href="#portfolio"
+                class="px-8 py-3 bg-neutral-800 border border-cyan-400 hover:bg-neutral-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  <span id="laptop-emoji" class="mr-2">💻</span> View Samples
+                </a>
+                <a
+                  href="./synopsis_maker.html"
+                  class="px-8 py-3 bg-green-600 hover:bg-green-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  <span id="phone-emoji" class="mr-2">📃</span> Make Synopsis
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Neon Grid Effect -->
+          <div
+            class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-purple-900/20 to-transparent"
+          ></div>
+        </section>
+
+        <script>
+          // Animation for hero section elements
+          document.addEventListener("DOMContentLoaded", function () {
+            // Function to animate element
+            function animateElement(elementId, delay) {
+              const element = document.getElementById(elementId);
+              if (element) {
+                setTimeout(() => {
+                  element.classList.add("transition-all", "duration-1000");
+                  element.classList.remove("opacity-0", "translate-y-8");
+                  element.classList.add("opacity-100", "translate-y-0");
+                }, delay);
+              }
+            }
+
+            // Animate elements with delays
+            animateElement("hero-heading", 300);
+            animateElement("hero-subtext", 600);
+            animateElement("hero-cta", 900);
+
+            // Emoji bounce animation
+            function bounceEmoji(emojiId) {
+              const emoji = document.getElementById(emojiId);
+              if (emoji) {
+                setInterval(() => {
+                  emoji.classList.add(
+                    "transition-transform",
+                    "duration-300",
+                    "transform",
+                    "scale-110"
+                  );
+                  setTimeout(() => {
+                    emoji.classList.remove("scale-110");
+                  }, 300);
+                }, 2000);
+              }
+            }
+
+            // Apply bounce to emojis
+            bounceEmoji("phone-emoji");
+            bounceEmoji("laptop-emoji");
+          });
+        </script>
+      </div>
+
+      <div id="service-sec">
+        <section id="services" class="py-20 bg-neutral-900 text-white">
+          <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+              <h2 class="text-4xl font-bold mb-4">Services</h2>
+              <p class="text-xl max-w-2xl mx-auto text-gray-300">
+                Custom website solutions designed specifically for college
+                students
+              </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                class="service-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  🎓
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">
+                  Project Websites
+                </h3>
+                <p class="text-gray-400">
+                  Showcase your final year project with style
+                </p>
+              </div>
+              <div
+                class="service-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  🧑&zwj;💼
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">
+                  Portfolio Sites
+                </h3>
+                <p class="text-gray-400">
+                  Stand out to recruiters with a personal brand
+                </p>
+              </div>
+              <div
+                class="service-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  📃
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">
+                  Resume Websites
+                </h3>
+                <p class="text-gray-400">
+                  Interactive resume that gets you noticed
+                </p>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-12">
+              <a
+                href="#contact"
+                class="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started Today
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          // Animation for service cards on scroll
+          document.addEventListener("DOMContentLoaded", function () {
+            const serviceCards = document.querySelectorAll(".service-card");
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(() => {
+                      entry.target.classList.add("opacity-100");
+                      entry.target.classList.remove(
+                        "opacity-0",
+                        "translate-y-8"
+                      );
+                    }, 100 * Array.from(serviceCards).indexOf(entry.target));
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.1,
+              }
+            );
+
+            serviceCards.forEach((card) => {
+              card.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(card);
+            });
+          });
+        </script>
+      </div>
+
+      <div id="why-kodymon-sec">
+        <section
+          id="why-kodymon"
+          class="py-20 bg-neutral-900 text-white relative overflow-hidden"
+        >
+          <!-- Background Gradient -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-neutral-900/20 pointer-events-none"
+          ></div>
+
+          <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+              <h2 class="text-4xl font-bold mb-4">Why KODYMON</h2>
+              <p class="text-xl max-w-2xl mx-auto text-gray-300">
+                What makes KODYMON the best choice for students
+              </p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div
+              class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+            >
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  🏫
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">
+                  Same College Wale
+                </h3>
+                <p class="text-gray-400">
+                  I understand your specific college requirements
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  💰
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">
+                  Affordable Rates
+                </h3>
+                <p class="text-gray-400">
+                  Student-friendly pricing that won't break the bank
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  📱
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Query Support</h3>
+                <p class="text-gray-400">
+                  Get quick responses to all your queries.
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  ⚡
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Fast Delivery</h3>
+                <p class="text-gray-400">
+                  Meet your deadlines with our quick turnaround
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          // Animation for benefit cards on scroll
+          document.addEventListener("DOMContentLoaded", function () {
+            const benefitCards = document.querySelectorAll(".benefit-card");
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(() => {
+                      entry.target.classList.add("opacity-100");
+                      entry.target.classList.remove(
+                        "opacity-0",
+                        "translate-y-8"
+                      );
+                    }, 100 * Array.from(benefitCards).indexOf(entry.target));
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.1,
+              }
+            );
+
+            benefitCards.forEach((card) => {
+              card.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(card);
+            });
+          });
+        </script>
+      </div>
+
+      <div id="we-are-good-sec">
+        <section
+          id="we-are-good-with"
+          class="py-20 bg-neutral-900 text-white relative overflow-hidden"
+        >
+          <!-- Background Gradient -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-neutral-900/20 pointer-events-none"
+          ></div>
+
+          <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+              <h2 class="text-4xl font-bold mb-4">We Are Good With</h2>
+              <p class="text-xl max-w-2xl mx-auto text-gray-300">
+                Explore the technologies we excel in
+              </p>
+            </div>
+
+            <!-- tech Grid -->
+            <div
+              class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+            >
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                    alt="HTML5"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">HTML</h3>
+                <p class="text-gray-400">
+                  The backbone of web content structure
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
+                    alt="CSS3"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">CSS</h3>
+                <p class="text-gray-400">Styling your web pages beautifully</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=EzPCiQUqWWEa&format=png&color=000000"
+                    alt="Bootstrap"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Bootstrap</h3>
+                <p class="text-gray-400">Responsive design made easy</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000"
+                    alt="Tailwind CSS"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Tailwind CSS</h3>
+                <p class="text-gray-400">Utility-first CSS framework</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
+                    alt="JavaScript"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">JavaScript</h3>
+                <p class="text-gray-400">
+                  Adding interactivity to your websites
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=9Um0Q4sZ0QCC&format=png&color=000000"
+                    alt="jQuery"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">jQuery</h3>
+                <p class="text-gray-400">
+                  Fast, small, and feature-rich JavaScript library
+                </p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000"
+                    alt="Python"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Python</h3>
+                <p class="text-gray-400">Versatile programming language</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=qV-JzWYl9dzP&format=png&color=000000"
+                    alt="Django"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Django</h3>
+                <p class="text-gray-400">High-level Python web framework</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png&color=ffffff"
+                    alt="Flask"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Flask</h3>
+                <p class="text-gray-400">Lightweight Python web framework</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=f0R4xVI4Sc8O&format=png&color=000000"
+                    alt="PHP"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">PHP</h3>
+                <p class="text-gray-400">Server-side scripting language</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=lRjcvhvtR81o&format=png&color=000000"
+                    alt="Laravel"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">Laravel</h3>
+                <p class="text-gray-400">Elegant PHP web framework</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="./src/assets/images/xampp.png"
+                    alt="XAMPP"
+                    class="mix-blend-multiply mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">XAMPP</h3>
+                <p class="text-gray-400">Local server environment</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="./src/assets/images/wampp.png"
+                    alt="XAMPP"
+                    class="mix-blend-multiply mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">WAMP</h3>
+                <p class="text-gray-400">Windows web development environment</p>
+              </div>
+              <div
+                class="benefit-card bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-rotate-1 group"
+              >
+                <div class="text-4xl mb-4 group-hover:animate-emoji-bounce">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000"
+                    alt="MySQL"
+                    class="mb-2 w-16 h-16"
+                  />
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white">MySQL</h3>
+                <p class="text-gray-400">Popular relational database system</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          // Animation for benefit cards on scroll
+          document.addEventListener("DOMContentLoaded", function () {
+            const benefitCards = document.querySelectorAll(".benefit-card");
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(() => {
+                      entry.target.classList.add("opacity-100");
+                      entry.target.classList.remove(
+                        "opacity-0",
+                        "translate-y-8"
+                      );
+                    }, 100 * Array.from(benefitCards).indexOf(entry.target));
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.1,
+              }
+            );
+
+            benefitCards.forEach((card) => {
+              card.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(card);
+            });
+          });
+        </script>
+      </div>
+
+      <div id="root">
+        <section id="portfolio" class="py-20 bg-neutral-900 text-white">
+          <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+              <h2 class="text-4xl font-bold mb-4">Portfolio</h2>
+              <p class="text-xl max-w-2xl mx-auto text-gray-300">
+                Check out some of our recent student projects
+              </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+              <!-- Portfolio Item 1 -->
+              <div
+                class="portfolio-card bg-neutral-800 rounded-xl overflow-hidden border border-purple-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] group"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">
+                    Restaurant Management System
+                  </h3>
+                  <p class="text-gray-300 mb-3">
+                    A web-based system to manage table bookings, food orders,
+                    and admin tasks like menus, staff, feedback, and payments.
+                  </p>
+                  <div class="mb-4">
+                    <h4 class="font-bold mb-2">Technologies Used</h4>
+                    <div class="flex space-x-4">
+                      <img
+                        src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                        alt="HTML5"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
+                        alt="CSS3"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
+                        alt="JavaScript"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=9Um0Q4sZ0QCC&format=png&color=000000"
+                        alt="jQuery"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=EzPCiQUqWWEa&format=png&color=000000"
+                        alt="Bootstrap"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=f0R4xVI4Sc8O&format=png&color=000000"
+                        alt="PHP"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000"
+                        alt="MySQL"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="./src/assets/images/xampp.png"
+                        alt="XAMPP"
+                        class="w-8 h-8"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <a
+                      href="https://drive.google.com/drive/folders/1dtshYldTl2idAj2jpn3vsea9pYb1YrUT?usp=drive_link"
+                      target="_blank"
+                    >
+                      <button
+                        class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300"
+                      >
+                        View Project
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Portfolio Item 2 -->
+              <div
+                class="portfolio-card bg-neutral-800 rounded-xl overflow-hidden border border-cyan-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] group"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">
+                    Mobile shop management system
+                  </h3>
+                  <p class="text-gray-300 mb-3">
+                    A web-based system to manage mobile sales, stock, services,
+                    and customer orders, with separate panels for admin and
+                    customers.
+                  </p>
+                  <div class="mb-4">
+                    <h4 class="font-bold mb-2">Technologies Used</h4>
+                    <div class="flex space-x-4">
+                      <img
+                        src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                        alt="HTML5"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
+                        alt="CSS3"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
+                        alt="JavaScript"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=9Um0Q4sZ0QCC&format=png&color=000000"
+                        alt="jQuery"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=EzPCiQUqWWEa&format=png&color=000000"
+                        alt="Bootstrap"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=f0R4xVI4Sc8O&format=png&color=000000"
+                        alt="PHP"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000"
+                        alt="MySQL"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="./src/assets/images/xampp.png"
+                        alt="XAMPP"
+                        class="w-8 h-8"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <a
+                      href="https://drive.google.com/file/d/1VUwiSPY42iza635XmqwbAlKsKCYGBtzr/view?usp=drive_link"
+                      target="_blank"
+                    >
+                      <button
+                        class="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 rounded-lg text-white font-medium transition-all duration-300"
+                      >
+                        View Project
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Portfolio Item 3 -->
+              <div
+                class="portfolio-card bg-neutral-800 rounded-xl overflow-hidden border border-pink-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] group"
+              >
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">
+                    Music Class and Instrument Selling Management
+                  </h3>
+                  <p class="text-gray-300 mb-3">
+                    A Django-powered platform for selling instruments and
+                    managing music class admissions, batches, orders, and
+                    payments.
+                  </p>
+                  <div class="mb-4">
+                    <h4 class="font-bold mb-2">Technologies Used</h4>
+                    <div class="flex space-x-4">
+                      <img
+                        src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
+                        alt="HTML5"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
+                        alt="CSS3"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
+                        alt="JavaScript"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=EzPCiQUqWWEa&format=png&color=000000"
+                        alt="Bootstrap"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000"
+                        alt="Python"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=qV-JzWYl9dzP&format=png&color=000000"
+                        alt="Django"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000"
+                        alt="MySQL"
+                        class="w-8 h-8"
+                      />
+
+                      <img
+                        src="./src/assets/images/wampp.png"
+                        alt="XAMPP"
+                        class="w-8 h-8"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex justify-end">
+                    <a
+                      href="https://drive.google.com/file/d/1pk5uFercgtrAFytob-F3GaWsb1fwimnK/view?usp=drive_link"
+                      target="_blank"
+                    >
+                      <button
+                        class="px-4 py-2 bg-pink-600 hover:bg-pink-700 rounded-lg text-white font-medium transition-all duration-300"
+                      >
+                        View Project
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center mt-12">
+              <button
+                id="view-more-btn"
+                class="px-8 py-3 bg-neutral-800 border border-purple-500 hover:bg-neutral-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                View More Projects
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Portfolio cards animation on scroll
+            const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(() => {
+                      entry.target.classList.add("opacity-100");
+                      entry.target.classList.remove(
+                        "opacity-0",
+                        "translate-y-8"
+                      );
+                    }, 100 * Array.from(portfolioCards).indexOf(entry.target));
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.1,
+              }
+            );
+
+            portfolioCards.forEach((card) => {
+              card.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(card);
+            });
+
+            // View More Button click handler
+            const viewMoreBtn = document.getElementById("view-more-btn");
+            viewMoreBtn.addEventListener("click", function () {
+              alert("View more projects clicked!");
+            });
+          });
+        </script>
+      </div>
+
+      <div id="root">
+        <section
+          id="contact"
+          class="py-20 bg-neutral-900 text-white relative overflow-hidden"
+        >
+          <!-- Background Image with Overlay -->
+          <div class="absolute inset-0 z-0">
+            <div
+              class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+            ></div>
+            <div
+              class="absolute top-10 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+            ></div>
+            <div
+              class="absolute bottom-10 left-1/2 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+            ></div>
+            <div class="absolute inset-0 bg-neutral-900 bg-opacity-70"></div>
+          </div>
+          <div class="container mx-auto px-4 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+              <h2 class="text-4xl font-bold mb-4">Contact</h2>
+              <p class="text-xl max-w-2xl mx-auto text-gray-300">
+                Get in touch to discuss your project
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 w-full mx-auto">
+              <!-- Contact Form -->
+              <div
+                class="bg-neutral-800 rounded-xl p-8 border border-purple-500/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+              >
+                <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+
+                <form id="contact-form" class="space-y-6">
+                  <!-- Name Input -->
+                  <div>
+                    <label
+                      for="yourName"
+                      class="block text-sm font-medium text-gray-300 mb-1"
+                      >Your Name</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                      >
+                        <span class="text-gray-400">👤</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="yourName"
+                        name="yourName"
+                        class="block w-full pl-10 pr-3 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400"
+                        placeholder="John Doe"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Project Name Input -->
+                  <div>
+                    <label
+                      for="projectName"
+                      class="block text-sm font-medium text-gray-300 mb-1"
+                      >Project Name</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                      >
+                        <span class="text-gray-400">📝</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="projectName"
+                        name="projectName"
+                        class="block w-full pl-10 pr-3 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400"
+                        placeholder="Enter Project Name"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Tech Stack -->
+                  <div>
+                    <p class="font-medium text-gray-300 mb-2">Tech Stack:</p>
+
+                    <!-- CSS Options -->
+                    <fieldset
+                      class="border border-gray-300 rounded px-4 py-3 mb-4"
+                    >
+                      <legend class="text-sm font-semibold text-gray-300 px-1">
+                        CSS Framework
+                      </legend>
+                      <label class="block">
+                        <input
+                          type="radio"
+                          name="css"
+                          value="Bootstrap"
+                          required
+                        />
+                        Bootstrap
+                      </label>
+                      <label class="block">
+                        <input type="radio" name="css" value="Tailwind" />
+                        Tailwind
+                      </label>
+                    </fieldset>
+
+                    <!-- Backend Options -->
+                    <fieldset
+                      class="border border-gray-300 rounded px-4 py-3 mb-4"
+                    >
+                      <legend class="text-sm font-semibold text-gray-300 px-1">
+                        Backend Technology
+                      </legend>
+                      <label class="block"
+                        ><input
+                          type="radio"
+                          name="backend"
+                          value="PHP"
+                          required
+                        />
+                        PHP</label
+                      >
+                      <label class="block"
+                        ><input type="radio" name="backend" value="Django" />
+                        Django</label
+                      >
+                      <label class="block"
+                        ><input type="radio" name="backend" value="Flask" />
+                        Flask</label
+                      >
+                      <label class="block"
+                        ><input type="radio" name="backend" value="Laravel" />
+                        Laravel</label
+                      >
+                    </fieldset>
+
+                    <!-- Web Server Options -->
+                    <fieldset class="border border-gray-300 rounded px-4 py-3">
+                      <legend class="text-sm font-semibold text-gray-300 px-1">
+                        Web Server
+                      </legend>
+                      <label class="block"
+                        ><input
+                          type="radio"
+                          name="server"
+                          value="XAMPP"
+                          required
+                        />
+                        XAMPP</label
+                      >
+                      <label class="block"
+                        ><input type="radio" name="server" value="WAMPP" />
+                        WAMPP</label
+                      >
+                    </fieldset>
+                  </div>
+
+                  <!-- Selected Modules Input -->
+                  <div>
+                    <label
+                      for="selectedModules"
+                      class="block text-sm font-medium text-gray-300 mb-1"
+                      >Selected Modules</label
+                    >
+                    <div class="relative">
+                      <div
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                      >
+                        <span class="text-gray-400">📝</span>
+                      </div>
+                      <textarea
+                        id="selectedModules"
+                        name="selectedModules"
+                        rows="4"
+                        class="block w-full pl-10 pr-3 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-white placeholder-gray-400"
+                        placeholder="Tell us about your selected modules..."
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button
+                    type="submit"
+                    id="submit-btn"
+                    class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+                  >
+                    Send via WhatsApp
+                  </button>
+                </form>
+
+                <!-- Form Success Message (Hidden by default) -->
+                <div
+                  id="form-success"
+                  class="hidden mt-4 p-4 bg-green-900/30 border border-green-500 rounded-lg"
+                >
+                  <p class="text-green-400 flex items-center">
+                    <span class="mr-2">✅</span>
+                    Message sent successfully! We'll get back to you soon.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Form submission handling
+            const contactForm = document.getElementById("contact-form");
+            const formSuccess = document.getElementById("form-success");
+            const submitBtn = document.getElementById("submit-btn");
+
+            contactForm.addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              // Disable button and show loading state
+              submitBtn.disabled = true;
+              submitBtn.innerHTML = "Sending...";
+
+              // form submission
+              const name = document.getElementById("yourName").value;
+              const project = document.getElementById("projectName").value;
+              const selectedModules = document.getElementById("selectedModules").value;
+
+              let techStack = ["HTML"];
+          
+              const css = document.querySelector("input[name='css']:checked");
+              if (css) techStack.push(css.value);
+          
+              const backend = document.querySelector("input[name='backend']:checked");
+              if (backend) techStack.push(backend.value);
+          
+              const server = document.querySelector("input[name='server']:checked");
+              if (server) techStack.push(server.value);
+          
+              const message = `Hey Kodymon! I'm ${name} 👋 I've selected my final year project titled "${project}". Based on the selected tech stack — ${techStack.join(", ")}, and following are my modules ${selectedModules} — I'm hoping you can help me fulfill the project requirements. Looking forward to working together!`;
+          
+              const phoneNumber = "+91 7984258818";
+              const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+          
+              window.open(url, "_blank");
+              setTimeout(() => {
+                // Reset form
+                contactForm.reset();
+
+                // Show success message
+                formSuccess.classList.remove("hidden");
+
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = "Send Message";
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                  formSuccess.classList.add("hidden");
+                }, 5000);
+              }, 1500);
+            });
+
+            // Animation for contact elements on scroll
+            const animateElements = document.querySelectorAll(
+              "#contact .bg-neutral-800"
+            );
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    setTimeout(() => {
+                      entry.target.classList.add("opacity-100");
+                      entry.target.classList.remove(
+                        "opacity-0",
+                        "translate-y-8"
+                      );
+                    }, 100 * Array.from(animateElements).indexOf(entry.target));
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              {
+                threshold: 0.1,
+              }
+            );
+
+            animateElements.forEach((element) => {
+              element.classList.add(
+                "opacity-0",
+                "translate-y-8",
+                "transition-all",
+                "duration-700"
+              );
+              observer.observe(element);
+            });
+          });
+        </script>
+      </div>
+
+      <div id="root">
+        <footer id="footer" class="bg-neutral-900 text-white relative">
+          <!-- Footer Content -->
+          <div class="container mx-auto px-4 pt-16 pb-8 relative z-10">
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+            >
+              <!-- About Column -->
+              <div>
+                <div class="mb-4">
+                  <a href="#" class="text-2xl font-bold flex items-center">
+                    <span class="text-purple-500">KODY</span
+                    ><span class="text-cyan-400">MON</span>
+                  </a>
+                </div>
+                <p class="text-gray-300 mb-4">
+                  Professional website development services for college
+                  students. Get your project, portfolio, or business website
+                  ready with us!
+                </p>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    <span class="sr-only">Instagram</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    <span class="sr-only">Twitter</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    <span class="sr-only">WhatsApp</span>
+                    <svg
+                      class="h-6 w-6"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M21.105 4.893C18.856 2.644 15.823 1.368 12.605 1.368c-6.548 0-11.877 5.328-11.877 11.876 0 2.096.55 4.142 1.595 5.945L1.368 24l4.925-.927c1.735.944 3.692 1.443 5.693 1.443h.005c6.548 0 11.877-5.33 11.877-11.877 0-3.218-1.276-6.252-3.525-8.501l.762.755zm-8.5 18.245h-.004c-1.772 0-3.507-.476-5.013-1.375l-.359-.213-3.728.978.996-3.64-.234-.372c-.988-1.574-1.511-3.393-1.511-5.269 0-5.445 4.432-9.877 9.882-9.877 2.64 0 5.122 1.03 6.988 2.898 1.866 1.868 2.893 4.35 2.893 6.99 0 5.448-4.435 9.88-9.88 9.88zm5.422-7.4c-.298-.149-1.765-.87-2.037-.968-.273-.099-.472-.148-.67.148-.2.298-.771.968-.945 1.166-.174.198-.347.223-.645.075-.298-.15-1.26-.464-2.4-1.475-.887-.788-1.485-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.15-.174.2-.298.3-.497.099-.198.05-.371-.025-.52-.075-.149-.67-1.612-.92-2.207-.242-.579-.487-.5-.67-.51-.174-.008-.372-.01-.57-.01-.199 0-.522.074-.795.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.273-.198-.57-.347z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Quick Links Column -->
+              <div>
+                <h3 class="text-lg font-bold mb-4 text-purple-400">
+                  Quick Links
+                </h3>
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-gray-300 hover:text-purple-400 transition-colors"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      class="text-gray-300 hover:text-purple-400 transition-colors"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#portfolio"
+                      class="text-gray-300 hover:text-purple-400 transition-colors"
+                      >Portfolio</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      class="text-gray-300 hover:text-purple-400 transition-colors"
+                      >Contact</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#privacy"
+                      class="text-gray-300 hover:text-purple-400 transition-colors"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Services Column -->
+              <div>
+                <h3 class="text-lg font-bold mb-4 text-cyan-400">
+                  Our Services
+                </h3>
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="#services"
+                      class="text-gray-300 hover:text-cyan-400 transition-colors"
+                      >Project Websites</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      class="text-gray-300 hover:text-cyan-400 transition-colors"
+                      >Portfolio Sites</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      class="text-gray-300 hover:text-cyan-400 transition-colors"
+                      >Resume Websites</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-neutral-800 my-8"></div>
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <div class="mb-4 md:mb-0">
+                <p class="text-gray-400 text-sm">
+                  &copy; 2025 KODYMON. All rights reserved.
+                </p>
+              </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <div class="flex justify-center mt-8">
+              <a
+                href="#"
+                id="back-to-top"
+                class="bg-neutral-800 hover:bg-purple-600 p-2 rounded-full transition-colors duration-300"
+                aria-label="Back to top"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </footer>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            // Smooth scroll for back to top button
+            const backToTopButton = document.getElementById("back-to-top");
+
+            backToTopButton.addEventListener("click", function (e) {
+              e.preventDefault();
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            });
+
+            // Show/hide back to top button based on scroll position
+            window.addEventListener("scroll", function () {
+              if (window.scrollY > 500) {
+                backToTopButton.classList.add("opacity-100");
+                backToTopButton.classList.remove("opacity-0");
+              } else {
+                backToTopButton.classList.add("opacity-0");
+                backToTopButton.classList.remove("opacity-100");
+              }
+            });
+
+            // Initialize back to top button state
+            backToTopButton.classList.add("transition-opacity", "duration-300");
+            if (window.scrollY <= 500) {
+              backToTopButton.classList.add("opacity-0");
+            }
+          });
+        </script>
+      </div>
+    </main>
+
+    <!-- Core functionality scripts -->
+    <script>
+      // Initialize interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add interactive behaviors
+        const interactiveElements = document.querySelectorAll(
+          ".interactive-element"
+        );
+        interactiveElements.forEach((element) => {
+          element.addEventListener("mouseenter", () => {
+            element.classList.add("hover");
+          });
+          element.addEventListener("mouseleave", () => {
+            element.classList.remove("hover");
+          });
+        });
+
+        // Initialize any dynamic content
+        const dynamicContent = document.querySelectorAll("[data-dynamic]");
+        dynamicContent.forEach((content) => {
+          // Add fade-in animation
+          content.classList.add("fade-in");
+        });
+      });
+
+      // Handle navigation
+      function handleNavigation(event) {
+        const link = event.currentTarget;
+        if (link.hasAttribute("data-nav")) {
+          event.preventDefault();
+          const target = link.getAttribute("data-nav");
+          document.querySelector(target).scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // Initialize navigation
+      document.querySelectorAll("[data-nav]").forEach((link) => {
+        link.addEventListener("click", handleNavigation);
+      });
+    </script>
+
+    <!-- Body Scripts -->
+    <script id="body-scripts">
+      // This script tag will be replaced with actual scripts.body content
+      if (window.scripts && window.scripts.body) {
+        document.getElementById("body-scripts").outerHTML = window.scripts.body;
+      }
+    </script>
+
+    <script>
+      // Flexible SPA Navigation
+
+      // Function to show the selected section and hide others
+      function showSection(sectionId) {
+        // Find all sections that could be page content
+        const allSections = document.querySelectorAll("main section");
+
+        // Hide all sections
+        allSections.forEach((section) => {
+          section.style.display = "none";
+        });
+
+        // Show the requested section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.style.display = "block";
+        } else {
+          // If section not found and there are sections, show the first one
+          if (allSections.length > 0) {
+            allSections[0].style.display = "block";
+          }
+        }
+
+        // Update active states in any navigation
+        updateNavActiveStates(sectionId);
+      }
+
+      // Function to update active states in navigation elements
+      function updateNavActiveStates(activeSectionId) {
+        // Find all navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+
+        // Remove active classes from all links
+        navLinks.forEach((link) => {
+          // Extract the section ID from href
+          const linkSectionId = link.getAttribute("href").substring(1);
+
+          // Skip links that don't point to sections
+          if (!linkSectionId) return;
+
+          // Handle desktop and mobile navigation links
+          // Remove active classes (handling different possible class combinations)
+          link.classList.remove(
+            "bg-gray-700",
+            "text-white",
+            "bg-blue-50",
+            "text-blue-600"
+          );
+
+          // Add default/inactive classes if needed
+          if (link.closest("nav")) {
+            // Check if this appears to be in the sidebar based on common classes
+            if (
+              link.closest(".bg-gray-800") ||
+              link.closest(".text-gray-300")
+            ) {
+              link.classList.add("text-gray-300");
+            }
+          }
+        });
+
+        // Add active classes to matching links
+        navLinks.forEach((link) => {
+          const linkTarget = link.getAttribute("href").substring(1);
+          if (linkTarget === activeSectionId) {
+            // For links that match the active section
+
+            // Different styling based on context
+            if (link.closest(".bg-gray-800") || link.closest("nav")) {
+              // Likely sidebar nav
+              link.classList.add("bg-gray-700", "text-white");
+            } else if (link.closest("#mobile-menu")) {
+              // Mobile menu
+              link.classList.add("bg-gray-700", "text-white");
+            } else {
+              // Default active state
+              link.classList.add("text-blue-600");
+            }
+          }
+        });
+      }
+
+      // Handle hash changes
+      window.addEventListener("hashchange", function () {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          showSection(hash);
+        }
+      });
+
+      // Handle initial page load
+      function handleInitialLoad() {
+        // Get section from hash if available
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          showSection(hash);
+        } else {
+          // If no hash, look for a default section or show the first one
+          const sections = document.querySelectorAll("main section");
+          if (sections.length > 0) {
+            // Try to find dashboard section first as default
+            const dashboardSection = document.getElementById("dashboard");
+            if (dashboardSection) {
+              showSection("dashboard");
+              if (history.replaceState) {
+                history.replaceState(null, null, "#dashboard");
+              } else {
+                window.location.hash = "dashboard";
+              }
+            } else {
+              // Otherwise use the first section's ID
+              const firstSectionId = sections[0].id;
+              if (firstSectionId) {
+                showSection(firstSectionId);
+                if (history.replaceState) {
+                  history.replaceState(null, null, "#" + firstSectionId);
+                } else {
+                  window.location.hash = firstSectionId;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Set up delegation for navigation clicks
+      document.addEventListener("click", function (event) {
+        // Find closest anchor element
+        let targetElement = event.target.closest("a");
+
+        // If we clicked on a hash link
+        if (
+          targetElement &&
+          targetElement.getAttribute("href") &&
+          targetElement.getAttribute("href").startsWith("#")
+        ) {
+          const sectionId = targetElement.getAttribute("href").substring(1);
+          if (sectionId) {
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+              event.preventDefault();
+              window.location.hash = sectionId;
+              showSection(sectionId);
+            }
+          }
+        }
+      });
+
+      // Start the SPA behavior
+      if (
+        window.project.type == "dashboard" ||
+        window.project.type == "mobileapp"
+      ) {
+        // Hide all sections except first one on initial page load
+        const allSections = document.querySelectorAll("main section");
+        allSections.forEach((section, index) => {
+          section.style.display = index === 0 ? "block" : "none";
+        });
+        handleInitialLoad();
+      }
+    </script>
+  </body>
+</html>

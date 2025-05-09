@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KD | Dynamic Synopsis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="./src/assets/images/👀.svg" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Add this rule to remove outline on focus for input elements */
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+    }
+    #form-section {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 2cm;
+      }
+      button {
+        display: none;
+      }
+      .no-print {
+        display: none;
+      }
+      /* Define font sizes for print */
+      #outTitle {
+        font-size: 16pt;
+      }
+      h2 {
+        font-size: 14pt;
+      }
+      body {
+        font-size: 12pt;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-white text-black px-10 pb-20 max-w-screen-lg mx-auto">
+    
+      <!-- Input Wizard UI -->
+      <div id="form-section">
+        <div class="space-y-6  pt-12">
+          <!-- Step 1: Project Title & Definition -->
+          <div id="step-1">
+            <div>
+              <label for="projectTitle" class="block text-sm font-medium text-gray-700 mb-1">Project Title</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📝</span>
+                </div>
+                <input
+                  type="text"
+                  id="projectTitle"
+                  name="projectTitle"
+                  class="block w-full pl-10 outline-none pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Project Title"
+                />
+              </div>
+            </div>
+    
+            <div class="mt-4">
+              <label for="projectDefinition" class="block text-sm font-medium text-gray-700 mb-1">Project Definition Description</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📄</span>
+                </div>
+                <textarea
+                  id="projectDefinition"
+                  name="projectDefinition"
+                  rows="5"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Description..."
+                ></textarea>
+              </div>
+            </div>
+    
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(1)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="nextStep(2)" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Next</button>
+            </div>
+          </div>
+    
+          <!-- Step 2: Company Info -->
+          <div id="step-2" class="hidden">
+            <div>
+              <label for="companyName" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">🏢</span>
+                </div>
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Company Name"
+                />
+              </div>
+            </div>
+    
+            <div class="mt-4">
+              <label for="companyOverview" class="block text-sm font-medium text-gray-700 mb-1">Overview</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📝</span>
+                </div>
+                <textarea
+                  id="companyOverview"
+                  name="companyOverview"
+                  rows="4"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Overview"
+                ></textarea>
+              </div>
+            </div>
+    
+            <div class="mt-4">
+              <label for="ownerName" class="block text-sm font-medium text-gray-700 mb-1">Owner Name</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">👤</span>
+                </div>
+                <input
+                  type="text"
+                  id="ownerName"
+                  name="ownerName"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Owner Name"
+                />
+              </div>
+            </div>
+    
+            <div class="mt-4">
+              <label for="phoneNumber" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📞</span>
+                </div>
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Phone Number"
+                />
+              </div>
+            </div>
+    
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(1)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="nextStep(3)" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Next</button>
+            </div>
+          </div>
+    
+          <!-- Step 3: Group Members -->
+          <div id="step-3" class="hidden">
+            <div id="groupFields" class="space-y-2"></div>
+            <button onclick="addGroupRow()" class="mt-2 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">+ Add Member</button>
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(2)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="checkGrp()" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Next</button>
+            </div>
+          </div>
+    
+          <!-- Step 4: Tools and Technology -->
+          <div id="step-4" class="hidden">
+            <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+              <legend class="text-sm font-semibold text-gray-700 px-1">Frontend</legend>
+              <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+                <legend class="text-sm font-semibold text-gray-700 px-1">CSS Framework</legend>
+                <label class="block">
+                  <input type="radio" name="css" value="Bootstrap 5 or higher" required> Bootstrap
+                </label>
+                <label class="block">
+                  <input type="radio" name="css" value="Tailwind 4 or higher"> Tailwind
+                </label>
+                <label class="block">
+                  <input type="radio" name="css" value="core css"> None
+                </label>
+              </fieldset>
+              <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+                <legend class="text-sm font-semibold text-gray-700 px-1">Javascript</legend>
+                <label class="block">
+                  <input type="radio" name="js" value="Javascript-(es5,es6)" required> Javascript (core)
+                </label>
+                <label class="block">
+                  <input type="radio" name="js" value="Javascript-(es5,es6), jQuery 3.7.1 or higher"> jQuery
+                </label>
+              </fieldset>
+              <span class="text-xs text-red-500">*html is added by default.</span>
+            </fieldset>
+    
+            <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+              <legend class="text-sm font-semibold text-gray-700 px-1">Backend Technology</legend>
+              <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+                <legend class="text-sm font-semibold text-gray-700 px-1">Backend Language</legend>
+                <label class="block">
+                  <input type="radio" name="backend" value="PHP 8.3 or higher" required> PHP
+                </label>
+                <label class="block">
+                  <input type="radio" name="backend" value="Django 5.0 or higher"> Django
+                </label>
+                <label class="block">
+                  <input type="radio" name="backend" value="Flask 3.0 or higher"> Flask
+                </label>
+                <label class="block">
+                  <input type="radio" name="backend" value="Laravel 10 or higher"> Laravel
+                </label>
+              </fieldset>
+    
+              <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+                <legend class="text-sm font-semibold text-gray-700 px-1">Database</legend>
+                <label class="block">
+                  <input type="radio" name="database" value="MySQL 8.3 or higher" required> MySQL
+                </label>
+                <label class="block">
+                  <input type="radio" name="database" value="PostgreSQL 16 or higher"> PostgreSQL
+                </label>
+              </fieldset>
+            </fieldset>
+    
+            <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+              <legend class="text-sm font-semibold text-gray-700 px-1">Web Server</legend>
+              <label class="block">
+                <input type="radio" name="server" value="XAMPP Server 8.0.30 or higher" required> XAMPP
+              </label>
+              <label class="block">
+                <input type="radio" name="server" value="WAMPP Server 8.0.30 or higher"> WAMPP
+              </label>
+            </fieldset>
+    
+            <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+              <legend class="text-sm font-semibold text-gray-700 px-1">Reporting Tool</legend>
+              <label class="block">
+                <input type="radio" name="reporting-tool" value="PHP Report Builder"> PHP Report Builder
+              </label>
+              <label class="block">
+                <input type="radio" name="reporting-tool" value="Django Report Builder"> Django Report Builder
+              </label>
+              <label class="block mt-2">
+                <input type="radio" name="reporting-tool" value="" onclick="document.getElementById('customReportingTool').disabled = false;">
+                Other:
+                <input type="text" id="customReportingTool" class="border px-2 py-1 ml-2" placeholder="Enter custom tool" disabled oninput="this.previousElementSibling.value = this.value">
+              </label>
+            </fieldset>
+    
+            <fieldset class="border border-gray-300 rounded px-4 py-3 mb-4">
+              <legend class="text-sm font-semibold text-gray-700 px-1">Other Tools</legend>
+              <input
+                type="text"
+                id="otherTools"
+                class="w-full border px-2 py-1"
+                placeholder="e.g., Draw.io, MS Word, MS PowerPoint"
+              />
+            </fieldset>
+    
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(3)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="nextStep(5)" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Next</button>
+            </div>
+          </div>
+    
+    
+          <!-- Step 5: Existing and Proposed System -->
+          <div id="step-5" class="hidden">
+            <div>
+              <label for="existingSystem" class="block text-sm font-medium text-gray-700 mb-1">Existing System (one point per line)</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📝</span>
+                </div>
+                <textarea
+                  id="existingSystem"
+                  name="existingSystem"
+                  rows="4"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Existing System"
+                ></textarea>
+              </div>
+            </div>
+    
+            <div class="mt-4">
+              <label for="proposedSystem" class="block text-sm font-medium text-gray-700 mb-1">Proposed System (one point per line)</label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-400">📝</span>
+                </div>
+                <textarea
+                  id="proposedSystem"
+                  name="proposedSystem"
+                  rows="4"
+                  class="block w-full pl-10 pr-3 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400"
+                  placeholder="Enter Proposed System"
+                ></textarea>
+              </div>
+            </div>
+    
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(4)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="nextStep(6)" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Next</button>
+            </div>
+          </div>
+    
+          <!-- Step 6: Modules -->
+          <div id="step-6" class="hidden">
+            <div id="moduleFields" class="space-y-4"></div>
+            <button onclick="addModuleRow()" class="mt-2 w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">+ Add Module</button>
+    
+            <div class="mt-6 flex justify-between">
+              <button onclick="prevStep(5)" class="py-2 px-10 border border-purple-600 bg-transparent hover:bg-purple-100 rounded-lg text-purple-600 font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">Back</button>
+              <button onclick="generateSynopsis()" class="py-2 px-10 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)]">Generate Synopsis</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Output section -->
+      <div id="output" class="hidden p-5">
+        <div class="mb-6 mx-auto border-b border-black">
+            <h1 class="font-semibold text-xl text-center">P.D. PANDYA INSTITUTE OF COMPUTER APPLICATION</h1>
+            <h1 class="font-semibold text-xl text-center">Semester – V &nbsp;&nbsp; CC – 306 Software Development Project – 1</h1>
+            <h1 id="outTitle" class="text-center font-bold text-xl mb-2">Restaurant Management System</h1>
+        </div>
+    
+        <h2 class="font-bold mb-2">Project Title:</h2>
+        <p id="outProjectTitle" class="mb-4"></p>
+    
+        <h2 class="font-bold mb-2">Project Definition Description:</h2>
+        <p id="outProjectDefinition" class="mb-4"></p>
+    
+        <h2 class="font-bold mb-2">Company Description:</h2>
+        <ul class="list-disc pl-6 mb-4">
+          <li><strong>Company Name:</strong> <span id="outCompanyName"></span></li>
+          <li><strong>Overview:</strong> <span id="outCompanyOverview"></span></li>
+          <li><strong>Owner Name:</strong> <span id="outOwnerName"></span></li>
+          <li><strong>Phone Number:</strong> <span id="outPhoneNumber"></span></li>
+        </ul>
+    
+        <h2 class="font-bold mb-2">Tools and Technology:</h2>
+        <ul id="outToolsList" class="list-disc pl-6 mb-4"></ul>
+    
+        <h2 class="font-bold mb-2">Existing System:</h2>
+        <ul id="outExistingSystem" class="list-disc pl-6 mb-4"></ul>
+    
+        <h2 class="font-bold mb-2">Proposed System:</h2>
+        <ul id="outProposedSystem" class="list-disc pl-6 mb-4"></ul>
+    
+        <h2 class="font-bold mb-2">Group Size:</h2>
+        <table class="table-auto w-full border border-black text-left mb-6">
+          <thead>
+            <tr>
+              <th class="font-semibold border border-black px-2 py-1">Div</th>
+              <th class="font-semibold border border-black px-2 py-1">Roll No</th>
+              <th class="font-semibold border border-black px-2 py-1">Full Name</th>
+            </tr>
+          </thead>
+          <tbody id="outGroupTable"></tbody>
+        </table>
+    
+        <h2 class="font-bold mb-2">List of Modules:</h2>
+        <ol id="outModuleList" class="list-decimal pl-6 mb-4"></ol>
+    
+        <h2 class="font-bold mb-2">Description of Modules:</h2>
+        <ol id="outModuleDescriptions" class="list-decimal pl-6 space-y-2"></ol>
+        <div class="no-print flex">
+          <!-- <button onclick="prevStep(6)" class="no-print mr-4 mb-6 px-10 py-2 bg-transparent border border-black textblack">Back</button> -->
+          <button onclick="window.print()" class="no-print mb-6 px-4 py-2 bg-black text-white">Export as PDF</button>
+        </div>
+      </div>
+
+  </div>
+
+   <div class="fixed bg-purple-200 w-full px-6 py-4 no-print bottom-0 mx-auto flex gap-8 items-center">
+    <h1
+      class="text-2xl md:text-xl lg:text-3xl font-bold"
+    >
+      🚀 Get Your Project Website Ready with
+      <span class="text-purple-500">KODY</span
+      ><span class="text-cyan-400">MON</span>!
+    </h1>
+    <a
+      href="./index.html"
+      class="px-8 no-print py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+    >
+      <span id="phone-emoji" class="mr-2 no-print">📞</span> <span class="no-print">Contact Me</span>
+    </a>
+  </div>
+</body>
+<script src="./synopsis.js"></script>
+</html>
