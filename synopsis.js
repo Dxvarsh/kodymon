@@ -9,7 +9,7 @@ function prevStep(step) {
 let grp_member = 0;
 
 function checkGrp() {
-    if (grp_member < 2) {
+    if (grp_member < 0) {
         alert('add atleast 2 grp members..!');
     }
     else {
@@ -40,12 +40,14 @@ function addGroupRow() {
         container.appendChild(row);
     }
 }
-
+let moduleNum = 0;
 function addModuleRow() {
+    moduleNum+=1;
     const container = document.getElementById('moduleFields');
     const row = document.createElement('div');
     row.className = 'space-y-1';
     row.innerHTML = `
+    <label for="projectTitle" class="block text-sm font-medium text-gray-700 mb-1">Module: ${moduleNum}</label>
     <input type="text" class="px-2 py-1 block w-full outline-none bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400" placeholder="Module Name">
     <textarea class="px-2 py-1 block w-full outline-none bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-black placeholder-gray-400" rows="5" placeholder="Module Description"></textarea>
   `;
@@ -55,6 +57,8 @@ function addModuleRow() {
 function generateSynopsis() {
     document.getElementById('form-section').classList.add('hidden');
     document.getElementById('output').classList.remove('hidden');
+    document.getElementById('main').classList.remove('px-10 pb-20');
+    document.getElementById('footer').classList.add('hidden');
 
     document.getElementById('outTitle').innerText = document.getElementById('projectTitle').value;
     document.getElementById('outProjectTitle').innerText = document.getElementById('projectTitle').value;
