@@ -9,7 +9,7 @@ function prevStep(step) {
 let grp_member = 0;
 
 function checkGrp() {
-    if (grp_member < 0) {
+    if (grp_member < 2) {
         alert('add atleast 2 grp members..!');
     }
     else {
@@ -42,7 +42,7 @@ function addGroupRow() {
 }
 let moduleNum = 0;
 function addModuleRow() {
-    moduleNum+=1;
+    moduleNum += 1;
     const container = document.getElementById('moduleFields');
     const row = document.createElement('div');
     row.className = 'space-y-1';
@@ -54,139 +54,204 @@ function addModuleRow() {
     container.appendChild(row);
 }
 
-function generateSynopsis() {
-    document.getElementById('form-section').classList.add('hidden');
-    document.getElementById('output').classList.remove('hidden');
-    document.getElementById('main').classList.remove('px-10 pb-20');
-    document.getElementById('footer').classList.add('hidden');
+function generatePDF() {
+    // Collect data from the form fields
+    const projectTitle = document.getElementById('projectTitle').value;
+    const projectDefinition = document.getElementById('projectDefinition').value;
+    const companyName = document.getElementById('companyName').value;
+    const companyOverview = document.getElementById('companyOverview').value;
+    const ownerName = document.getElementById('ownerName').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
 
-    document.getElementById('outTitle').innerText = document.getElementById('projectTitle').value;
-    document.getElementById('outProjectTitle').innerText = document.getElementById('projectTitle').value;
-    document.getElementById('outProjectDefinition').innerText = document.getElementById('projectDefinition').value;
-    document.getElementById('outCompanyName').innerText = document.getElementById('companyName').value;
-    document.getElementById('outCompanyOverview').innerText = document.getElementById('companyOverview').value;
-    document.getElementById('outOwnerName').innerText = document.getElementById('ownerName').value;
-    document.getElementById('outPhoneNumber').innerText = document.getElementById('phoneNumber').value;
+    // Collect tools and technology data
+    const css = document.querySelector('input[name="css"]:checked')?.value || '';
+    const js = document.querySelector('input[name="js"]:checked')?.value || '';
+    const backend = document.querySelector('input[name="backend"]:checked')?.value || '';
+    const db = document.querySelector('input[name="database"]:checked')?.value || '';
+    const server = document.querySelector('input[name="server"]:checked')?.value || '';
+    const reporting = document.querySelector('input[name="reporting-tool"]:checked')?.value || '';
+    const otherTools = document.getElementById('otherTools').value;
 
-    // Tools
-    const outToolsList = document.getElementById("outToolsList");
-    outToolsList.innerHTML = "";
-    const css = document.querySelector('input[name="css"]:checked');
-    const js = document.querySelector('input[name="js"]:checked');
-    const backend = document.querySelector('input[name="backend"]:checked');
-    const db = document.querySelector('input[name="database"]:checked');
-    const server = document.querySelector('input[name="server"]:checked');
-    const reporting = document.querySelector('input[name="reporting-tool"]:checked');
-    const other = document.getElementById('otherTools').value;
+    // Collect existing and proposed system data
+    const existingSystem = document.getElementById('existingSystem').value;
+    const proposedSystem = document.getElementById('proposedSystem').value;
 
-    if (css || js || backend) {
-        outToolsList.innerHTML += `<li><strong>Front End:</strong>
-            <ul class='list-none ml-[-0.25rem]'>
-                <li>→ HTML 5</li>
-                <li>→ ${css.value}</li>
-                <li>→ ${js.value}</li>
-                </ul>
-            </li>
-        `;
-    }
-
-    if (backend || db) {
-        outToolsList.innerHTML += `<li class="mt-1"><strong>Back End:</strong>
-            <ul class='list-none ml-[-0.25rem]'>
-                <li>→ ${backend.value}</li>
-                <li>→ ${db.value}</li>
-                </ul>
-            </li>
-        `;
-    }
-
-    outToolsList.innerHTML += `
-      <li class="mt-1"><strong>Development Tools:</strong>
-        <ul class='list-none ml-[-0.25rem]'>
-          <li>→ Visual Studio Code 1.86 or higher</li>
-        </ul>
-      </li>`;
-
-    if (server) {
-        outToolsList.innerHTML += `<li class="mt-1"><strong>Web Server:</strong>
-        <ul class='list-none ml-[-0.25rem]'><li>→ ${server.value}</li></ul>
-      </li>`;
-    }
-
-    if (reporting && reporting.value.trim()) {
-        outToolsList.innerHTML += `<li class="mt-1"><strong>Reporting Tools:</strong>
-        <ul class='list-none ml-[-0.25rem]'><li>→ ${reporting.value}</li></ul>
-      </li>`;
-    }
-
-    if (other.trim()) {
-        const tools = other.split(',');
-        outToolsList.innerHTML += `<li class="mt-1"><strong>Other Tools:</strong><ul class='innerUL list-none ml-[-0.25rem]'>`;
-        tools.forEach(tool => document.querySelector('.innerUL').innerHTML += `<li>→ ${tool.trim()}</li>`);
-        outToolsList.innerHTML += `</ul></li>`;
-    }
-
-    // Group Table
+    // Collect group members data
     const groupRows = document.querySelectorAll('#groupFields > div');
-    const groupTable = document.getElementById('outGroupTable');
-    groupTable.innerHTML = "";
+    const groupMembers = [];
     groupRows.forEach(row => {
         const inputs = row.querySelectorAll('input');
         if (inputs.length === 3) {
-            groupTable.innerHTML += `<tr>
-          <td class="border border-black px-2 py-1">${inputs[0].value}</td>
-          <td class="border border-black px-2 py-1">${inputs[1].value}</td>
-          <td class="border border-black px-2 py-1">${inputs[2].value}</td>
-        </tr>`;
+            groupMembers.push({
+                div: inputs[0].value,
+                rollNo: inputs[1].value,
+                fullName: inputs[2].value
+            });
         }
     });
 
-    // Existing & Proposed
-    // Existing and Proposed Systems
-    const existing = document.getElementById("existingSystem").value.trim().split("\n");
-    const existingList = document.getElementById("outExistingSystem");
-    existingList.innerHTML = "";
-    existing.forEach(point => {
-        if (point.trim()) existingList.innerHTML += `<li>${point}</li>`;
-    });
-
-    const proposed = document.getElementById("proposedSystem").value.trim().split("\n");
-    const proposedList = document.getElementById("outProposedSystem");
-    proposedList.innerHTML = "";
-    proposed.forEach(point => {
-        if (point.trim()) proposedList.innerHTML += `<li>${point}</li>`;
-    });
-
-    // Modules and Descriptions
-    /* const modules = document.querySelectorAll("#modulesContainer .module");
-    const modList = document.getElementById("outModuleList");
-    const modDesc = document.getElementById("outModuleDescriptions");
-    modList.innerHTML = "";
-    modDesc.innerHTML = "";
-    modules.forEach((mod, i) => {
-      const inputs = mod.querySelectorAll("input, textarea");
-      if (inputs.length === 2 && inputs[0].value.trim()) {
-        modList.innerHTML += `<li>${inputs[0].value.trim()}</li>`;
-        modDesc.innerHTML += `<li><strong>${inputs[0].value.trim().split("\n")}:</strong> ${inputs[1].value.trim()}</li>`;
-      }
-    }); */
-
-
+    // Collect modules data
     const modFields = document.querySelectorAll('#moduleFields > div');
-    const modList = document.getElementById("outModuleList");
-    const modDesc = document.getElementById("outModuleDescriptions");
-    modList.innerHTML = "";
-    modDesc.innerHTML = "";
+    const modules = [];
     modFields.forEach(field => {
         const name = field.querySelector('input')?.value;
         const desc = field.querySelector('textarea')?.value;
         if (name) {
-            modList.innerHTML += `<li>${name}</li>`;
-            modDesc.innerHTML += `<li><strong>${name}:</strong>
-                <div>
-                    <ul>${desc.split('\n').map(line => `<li>${line}</li>`).join('')}</ul>
-                </div>
-            </li>`;
+            modules.push({
+                name: name,
+                description: desc
+            });
         }
     });
+
+    // Define the document definition for pdfmake
+    const docDefinition = {
+        pageMargins: [40, 60, 40, 60], // Add margins to simulate border space
+        background: function(currentPage, pageSize) {
+            return {
+                canvas: [
+                    {
+                        type: 'rect',
+                        x: 20, y: 20,
+                        w: pageSize.width - 40,
+                        h: pageSize.height - 40,
+                        lineWidth: 1,
+                        lineColor: '#000000'
+                    }
+                ]
+            };
+        },
+        content: [
+            { text: "P.D. PANDYA INSTITUTE OF COMPUTER APPLICATION", fontSize: 16, bold: true, alignment: 'center' },
+            { text: "Semester – V CC – 306 Software Development Project – 1", fontSize: 16, bold: true, alignment: 'center' },
+            { text: "Restaurant Management System", fontSize: 16, bold: true, alignment: 'center', margin: [0, 0, 0, 20] },
+
+            { text: `Project Title: ${projectTitle}`, fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                text: [
+                    { text: "Project Definition Description: ", fontSize: 14, bold: true },
+                    { text: projectDefinition, fontSize: 12 }
+                ],
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "Company Description:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                ul: [
+                    `Company Name: ${companyName}`,
+                    `Overview: ${companyOverview}`,
+                    `Owner Name: ${ownerName}`,
+                    `Phone Number: ${phoneNumber}`
+                ],
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            {
+                text: "Tools and Technology:", fontSize: 14, bold: true, margin: [0, 10, 0, 5]
+            },
+            {
+                ul: [
+                    {
+                        text: [
+                            { text: "Front End: ", bold: true },
+                            { text: "\n HTML-5" },
+                            { text: `\n ${css}` },
+                            { text: `\n ${js}` }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: [
+                            { text: "Back End: ", bold: true },
+                            { text: `\n ${backend}` },
+                            { text: `\n ${db}` }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: [
+                            { text: "Development Tools: ", bold: true },
+                            { text: "\n Visual Studio Code 1.86 or higher" }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: [
+                            { text: "Web Server: ", bold: true },
+                            { text: `\n ${server}` }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: [
+                            { text: "Reporting Tools: ", bold: true },
+                            { text: `\n ${reporting}` }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    },
+                    {
+                        text: [
+                            { text: "Other Tools: ", bold: true },
+                            { text: `\n ${otherTools}` }
+                        ],
+                        margin: [0, 0, 0, 5]
+                    }
+                ],
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "Existing System:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                ul: existingSystem.split('\n').filter(line => line.trim() !== ''),
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "Proposed System:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                ul: proposedSystem.split('\n').filter(line => line.trim() !== ''),
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "Group Size:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                table: {
+                    headerRows: 1,
+                    widths: ['auto', 'auto', 'auto'],
+                    body: [
+                        ['Div', 'Roll No', 'Full Name'],
+                        ...groupMembers.map(member => [member.div, member.rollNo, member.fullName])
+                    ]
+                },
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "List of Modules:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                ol: modules.map(module => module.name),
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            },
+
+            { text: "Description of Modules:", fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+            {
+                ul: modules.map(module => ({
+                    text: [
+                        { text: `${module.name}\n`, bold: true },
+                        ...module.description.split('\n').map(line => ({ text: `→ ${line}\n` }))
+                    ]
+                })),
+                fontSize: 12,
+                margin: [0, 0, 0, 10]
+            }
+        ]
+    };
+
+    // Generate the PDF
+    pdfMake.createPdf(docDefinition).download(`KODYMON_${projectTitle}_synopsis.pdf`);
 }
+
