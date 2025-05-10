@@ -242,7 +242,7 @@ function generatePDF() {
                 ul: modules.map(module => ({
                     text: [
                         { text: `${module.name}\n`, bold: true },
-                        ...module.description.split('\n').map(line => ({ text: `→ ${line}\n` }))
+                        ...module.description.split('\n').map(line => ({ text: ` ${line}\n` }))
                     ]
                 })),
                 fontSize: 12,
